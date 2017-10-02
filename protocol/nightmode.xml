@@ -1,0 +1,22 @@
+<protocol name="nightmode">
+    <interface name="qt_night_mode" version="1">
+      <description summary="extension for telling clients to use night mode">
+          Extension for telling clients to use night mode.
+      </description>
+
+      <enum name="state">
+        <description summary="window decoration state">
+          Describes whether to use night or day mode.
+        </description>
+        <entry name="day" value="0" summary="Prefer dark text on light background"/>
+        <entry name="night" value="1" summary="Prefer light text on dark background"/>
+      </enum>
+
+      <event name="set_night_mode">
+        <description summary="turn night mode on/off">
+          Ask the client to turn night mode on/off for all surfaces.
+        </description>
+        <arg name="state" type="uint" enum="state"/>
+      </event>
+    </interface>
+</protocol>
